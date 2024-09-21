@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import { CREATE_BOARD } from "./BoardWrite.queries";
 export default function BoardWrite() {
   const [createBoard] = useMutation(CREATE_BOARD);
+  const router = useRouter();
   const [writer, setWriter] = useState("");
   const [password, setPassword] = useState("");
   const [title, setTitle] = useState("");
@@ -13,7 +14,7 @@ export default function BoardWrite() {
   const [passwordError, setPasswordError] = useState("");
   const [titleError, setTitleError] = useState("");
   const [contentsError, setContentsError] = useState("");
-  const router = useRouter();
+  const [isActive, setIsActive] = useState(false);
   const onChangeWriter = (event) => {
     setWriter(event.target.value);
     if (event.target.value !== "") {
@@ -25,17 +26,32 @@ export default function BoardWrite() {
     if (event.target.value !== "") {
       setPasswordError("");
     }
+    if(event.target.value && title && contents && writer){
+      setIsActive(true)
+    }else{
+      setIsActive(false)
+    }
   };
   const onChangeTitle = (event) => {
     setTitle(event.target.value);
     if (event.target.value !== "") {
       setTitleError("");
     }
+    if(event.target.value && writer && contents && password){
+      setIsActive(true)
+    }else{
+      setIsActive(false)
+    }
   };
   const onChangeContents = (event) => {
     setContents(event.target.value);
     if (event.target.value !== "") {
       setContentsError("");
+    }
+    if(event.target.value && title && writer && password){
+      setIsActive(true)
+    }else{
+      setIsActive(false)
     }
   };
   const onClickSummit = async () => {
@@ -83,6 +99,7 @@ export default function BoardWrite() {
         passwordError={passwordError}
         titleError={titleError}
         contentsError={contentsError}
+        isActive={isActive}
       />
     </>
   );

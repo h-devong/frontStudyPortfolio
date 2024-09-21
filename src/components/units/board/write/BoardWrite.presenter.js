@@ -72,7 +72,10 @@ export default function BoardWriteUI(props) {
             사진
           </S.ThumbnailWrapper>
         </S.ElementWrapper>
-        <S.SummitButton onClick={props.onClickSummit}>등록하기</S.SummitButton>
+        <S.SummitButton onClick={props.onClickSummit}
+        isActive={props.isActive}
+        disabled={!props.isActive}
+        >등록하기</S.SummitButton>
       </S.BoardWrapper>
     </>
   );

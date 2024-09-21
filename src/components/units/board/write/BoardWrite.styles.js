@@ -151,7 +151,8 @@ export const SummitButton = styled.button`
   margin: 0px auto 0px auto;
   padding: 14px 40px 14px 40px;
   color: black;
-  background-color: #ffd600;
+  background-color: ${props => props.isActive ? "yellow" : "#808080"};
+
   border: none;
   border-radius: 10px;
 `;
