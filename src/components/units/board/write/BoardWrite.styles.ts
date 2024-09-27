@@ -1,5 +1,11 @@
 import styled from "@emotion/styled";
-
+export const Wrapper = styled.div`
+  padding: 80px 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
 export const BoardWrapper = styled.div`
   width: 1200px;
   border: solid gray;
@@ -36,7 +42,7 @@ export const WriterWrapper = styled.div`
   margin-right: 24px;
 `;
 export const WriterInput = styled.input`
-  border: 1px soild #bdbdbd;
+  border: 1px solid #bdbdbd;
   color: black;
   height: 52px;
   padding-left: 16px;
@@ -49,7 +55,7 @@ export const PasswordWrapper = styled.div`
   width: 486px;
 `;
 export const PasswordInput = styled.input`
-  border: 1px soild #bdbdbd;
+  border: 1px solid #bdbdbd;
   color: black;
   height: 52px;
   padding-left: 16px;
@@ -62,7 +68,7 @@ export const ElementWrapper = styled.div`
   margin-bottom: 30px;
 `;
 export const TitleInput = styled.input`
-  border: 1px soild #bdbdbd;
+  border: 1px solid #bdbdbd;
   color: black;
   height: 52px;
   padding-left: 16px;
@@ -70,7 +76,7 @@ export const TitleInput = styled.input`
 `;
 
 export const ContentInput = styled.textarea`
-  border: 1px soild #bdbdbd;
+  border: 1px solid #bdbdbd;
   min-height: 520px;
   color: black;
   padding-left: 16px;
@@ -81,7 +87,7 @@ export const ZipCodeInput = styled.input`
   height: 52px;
   width: 77px;
   padding: 14px 14px 14px 14px;
-  border: 1px soild #bdbdbd;
+  border: 1px solid #bdbdbd;
   color: black;
   margin-right: 20px;
   border-radius: 10px;
@@ -99,7 +105,7 @@ export const ZipCodeWrapper = styled.div`
   margin-bottom: 20px;
 `;
 export const AddressOneInput = styled.input`
-  border: 1px soild #bdbdbd;
+  border: 1px solid #bdbdbd;
   color: black;
   height: 52px;
   padding-left: 16px;
@@ -107,7 +113,7 @@ export const AddressOneInput = styled.input`
   margin-bottom: 20px;
 `;
 export const AddressTwoInput = styled.input`
-  border: 1px soild #bdbdbd;
+  border: 1px solid #bdbdbd;
   color: black;
   height: 52px;
   padding-left: 16px;
@@ -115,7 +121,7 @@ export const AddressTwoInput = styled.input`
 `;
 
 export const YoutubeInput = styled.input`
-  border: 1px soild #bdbdbd;
+  border: 1px solid #bdbdbd;
   color: black;
   height: 52px;
   padding-left: 16px;
@@ -151,8 +157,7 @@ export const SummitButton = styled.button`
   margin: 0px auto 0px auto;
   padding: 14px 40px 14px 40px;
   color: black;
-  background-color: ${props => props.isActive ? "yellow" : "#808080"};
-
+  background-color: #808080;
   border: none;
   border-radius: 10px;
 `;

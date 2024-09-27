@@ -1,7 +1,8 @@
 import * as S from "./BoardWrite.styles";
-export default function BoardWriteUI(props) {
+import { IBoardWriteProps } from "./BoardWrite.types";
+export default function BoardWriteUI(props: IBoardWriteProps) {
   return (
-    <>
+    <S.Wrapper>
       <S.BoardWrapper>
         <S.BoardTitle>게시물 등록</S.BoardTitle>
         <S.TopWrapper>
@@ -10,6 +11,8 @@ export default function BoardWriteUI(props) {
             <S.WriterInput
               placeholder="이름을 작성해주세요"
               onChange={props.onChangeWriter}
+              defaultValue={props.data?.fetchBoard.writer}
+              disabled={props.isEdit}
             />
             <S.Error>{props.writerError}</S.Error>
           </S.WriterWrapper>
@@ -27,6 +30,7 @@ export default function BoardWriteUI(props) {
           <S.TitleInput
             placeholder="제목을 작성해주세요"
             onChange={props.onChangeTitle}
+            defaultValue={props.data?.fetchBoard.title}
           />
           <S.Error>{props.titleError}</S.Error>
         </S.ElementWrapper>
@@ -35,6 +39,7 @@ export default function BoardWriteUI(props) {
           <S.ContentInput
             placeholder="내용을 작성해주세요"
             onChange={props.onChangeContents}
+            defaultValue={props.data?.fetchBoard.contents}
           />
           <S.Error>{props.contentsError}</S.Error>
         </S.ElementWrapper>
@@ -72,11 +77,14 @@ export default function BoardWriteUI(props) {
             사진
           </S.ThumbnailWrapper>
         </S.ElementWrapper>
-        <S.SummitButton onClick={props.onClickSummit}
-        isActive={props.isActive}
-        disabled={!props.isActive}
-        >등록하기</S.SummitButton>
+        <S.SummitButton
+          onClick={props.isEdit ? props.onClickUpdate : props.onClickSummit}
+          // isActive={props.isActive}
+          disabled={!props.isActive}
+        >
+          {props.isEdit ? "수정하기" : "등록하기"}
+        </S.SummitButton>
       </S.BoardWrapper>
-    </>
+    </S.Wrapper>
   );
 }

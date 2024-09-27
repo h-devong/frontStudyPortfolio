@@ -1,5 +1,6 @@
-import * as S from './BoardDetail.styles';
-export default function BoardDetailUI(props) {
+import * as S from "./BoardDetail.styles";
+import { IBoardDetailProps } from "./boardDetail.types";
+export default function BoardDetailUI(props: IBoardDetailProps) {
   return (
     <>
       <S.Wrapper>
@@ -21,8 +22,8 @@ export default function BoardDetailUI(props) {
           </S.Body>
         </S.CardWrapper>
         <S.BottomWrapper>
-          <S.Button>목록으로</S.Button>
-          <S.Button>수정하기</S.Button>
+          <S.Button onClick={props.onClickList}>목록으로</S.Button>
+          <S.Button onClick={props.onClickEdit}>수정하기</S.Button>
           <S.Button onClick={props.onClickDelete}>삭제하기</S.Button>
         </S.BottomWrapper>
       </S.Wrapper>

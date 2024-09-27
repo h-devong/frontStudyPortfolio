@@ -1,6 +1,7 @@
-import GetDate from '../../../../commons/units/getdate';
-import * as S from './BoardList.styles';
-export default function BoardListUI(props) {
+import GetDate from "../../../../commons/units/getdate";
+import * as S from "./BoardList.styles";
+import { IBoardListProps } from "./BoardList.types";
+export default function BoardListUI(props: IBoardListProps) {
   return (
     <S.Wrapper>
       <S.ListTable>
@@ -10,7 +11,7 @@ export default function BoardListUI(props) {
           <S.HeaderLabel>작성자</S.HeaderLabel>
           <S.HeaderLabel>날짜</S.HeaderLabel>
         </S.TableRow>
-        {props.data?.fetchBoards.map((el) => (
+        {props.data?.fetchBoards.map((el: any) => (
           <S.TableRow key={el._id} onClick={() => props.onClickRow(el._id)}>
             <S.TableLabel>{el._id.slice(0, 4)}</S.TableLabel>
             <S.TableLabel>{el.title}</S.TableLabel>
@@ -19,7 +20,7 @@ export default function BoardListUI(props) {
           </S.TableRow>
         ))}
       </S.ListTable>
-      <S.NewButton>
+      <S.NewButton onClick={props.onClickNew}>
         <S.Image src="/pencil.png" />
         게시물 등록하기
       </S.NewButton>

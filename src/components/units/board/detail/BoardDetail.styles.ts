@@ -75,7 +75,7 @@ export const BottomWrapper = styled.div`
   display: flex;
   justify-content: center;
 `;
-export const Button = styled.div`
+export const Button = styled.button`
   width: 180px;
   margin: 0px 12px;
   height: 44px;

@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
   border: solid gray;
@@ -40,7 +40,7 @@ export const Image = styled.img`
   width: 18px;
   height: 18px;
 `;
-export const NewButton = styled.div`
+export const NewButton = styled.button`
   width: 170px;
   height: 52px;
   padding: 14px 16px 14px 16px;
